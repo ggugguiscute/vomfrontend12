@@ -1,0 +1,41 @@
+/* cascade style sheet */
+/* 1. 외부보다는 내부, 내부보다는 인라인이 우선 적용 */
+/* 2. 먼저 작성된 것보다 후에 작성된 것이 우선 적용 */
+
+/* selector{property: property-value;} */
+/* selector:대상(태그) property:속성 property-value:속성값 */
+
+/********** selector *********/
+/* 1. 태그 선택자 : 태그 이름을 그대로 사용한다.*/
+h2{color:red;}
+/* 2. 아이디, 클래스 선택자 : 아이디는 #, 클래스는 .로 연결한다. */
+#abc{color:blue;}
+.cde{color:seagreen}
+/* 3. 전체 선택자 : 전체 엘리먼트를 선택하며 *로 표시한다. */
+/* *{border: 2px solid;} */
+/* 4. 자식 선택자 : 편집하고자 하는 요소의 부모로부터 > 표시를 사용한 하위요소 */
+/* 직계자식만 가능 */
+/* p > span > a{text-decoration: none; color:palevioletred;} */
+/* 5. 후손 선택자 : 편집하고자 하는 요소의 상위 부모로부터 공백을 사용한 하위요소*/
+/* 후손 선택자는 자식을 포함한 후손을 선택한다. */
+
+ul ul a{color:red;}
+
+/* 6. 그룹 선택자 : 속성과 값이 같은 요소를 공통 요소로 선택한다.*/
+h2, p, ul{border:1px solid;}
+
+/* 7. 형제 선택자 */
+/* + 기호는 기준 요소 다음 형제 요소 선택 */
+/* ~ 기호는 기준 요소 다음 형제 요소 전체 선택 */
+.para + p{color:violet;}
+.para ~ p{color:hotpink;}
+
+/* 8. 가상 선택자(nth) */
+/* div li:nth-child(1){color:yellowgreen;} = */
+div li:first-child{color:yellowgreen;}
+div li:last-child{color:magenta;}
+
+/* 9. 의제선택자 */
+/* before, after를 사용할 때 content 속성의 값은 필수이다. 빈 공간을 나타내고 싶다면 ''를 사용한다. */
+h1::before{content:'['}
+h1::after{content:']'}
