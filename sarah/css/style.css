@@ -60,6 +60,35 @@ section > img {
   width: 100%;
 }
 
+/*================ Header Style  ==============*/
+
+header {
+  position: absolute;
+  /* display: flex;
+  align-items: center;
+  padding: 100px; */
+  margin-left: -250px;
+  width: 400px;
+  top: 100px;
+  left: 50%;
+}
+
+header > img {
+  width: 100%;
+}
+
+.sns {
+  position: absolute;
+  top: 60px;
+  right: 25px;
+  display: flex; /*여기서부터*/
+  margin-right: 10px;
+}
+
+.sns a {
+  font-size: 1.5rem;
+}
+
 /* section {
   width: 100%;
   height: 500px;
@@ -73,3 +102,124 @@ section > img {
 section > img {
   width: 100%;
 } */
+
+/*================ Navigation Style  ==============*/
+.navi-container {
+  width: 100%;
+  z-index: 100;
+  background: url(../img/tr.png);
+}
+
+.navi-container > .navi-list {
+  width: 100%;
+  max-width: 1280px;
+  margin: auto;
+  display: flex;
+}
+
+/*여기..*/
+.navi-container > .navi-list > li {
+  width: 16.66%;
+  text-align: center;
+  position: relative; /*여기*/
+  _line-height: 3;
+  _font-family: orbitron;
+  _font-size: 12px;
+  perspective: 700px; /*여기*/
+}
+
+.navi-container > .navi-list > li > a {
+  line-height: 3;
+  font-family: orbitron;
+  font-size: 12px;
+  text-transform: uppercase;
+  /* lowercase:소문자, capitalize:단어의 첫 글자만 대문자 */
+  transition: all 0.4s ease;
+  display: block;
+}
+
+.navi-container > .navi-list > li:hover > a {
+  transform: translateY(-20px); /*인라인은 적용X*/
+  opacity: 0;
+}
+
+/*================ 2 Depth  ==============*/
+.navi-list > li > div {
+  position: absolute;
+  width: 200px;
+  height: 300px;
+  left: 0;
+  top: 0;
+  /*top:-100px;*/
+  background: url(../img/tr.png);
+  padding: 10px;
+  transition: all 0.4s ease;
+  opacity: 0;
+  visibility: hidden; /*여기*/
+}
+
+.navi-list > li:hover > div {
+  opacity: 1;
+  top: -100px;
+  visibility: visible; /*여기
+  참조 :https://developer.mozilla.org/ko/docs/Web/CSS/visibility
+  opacity가 0인 경우에도 요소는 존재한다. 따라서 마우스 호버 등의 영향을 받는다. 하지만 visibility를 hidden으로 하면 요소 자체가 없어지는 효과가 난다.*/
+  transform: rotateY(360deg);
+}
+
+.navi-list > li > div > p {
+  width: 100%;
+  height: 90px;
+  overflow: hidden;
+  border: 1px solid #333;
+}
+
+.navi-list > li > div img {
+  width: 100%;
+  opacity: 0.5;
+}
+
+.navi-list > li > div > h2 {
+  position: absolute;
+  top: 100px;
+  width: 100%;
+  _text-align: center;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-family: orbitron;
+  color: #fff;
+  height: 50px;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navi-list > li > div > ul {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.navi-list > li > div > ul > li {
+  width: 100%;
+  height: 37px;
+}
+
+.navi-list > li > div > ul > li > a {
+  border-top: 1px solid #111;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  color: #888;
+  transition: all 0.4s ease;
+}
+
+.navi-list > li > div > ul > li > a:hover {
+  background: #000;
+  color: #fff;
+}
