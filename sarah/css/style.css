@@ -52,18 +52,22 @@ section {
   position: absolute;
   z-index: 100;
   overflow: hidden;
-  display: flex;
-  align-items: center;
+  _display: flex;
+  _align-items: center;
 }
 
 section > img {
   width: 100%;
+  position: absolute;
+  top: 0;
+  transform: translateY(-25%);
+  left: 0;
 }
 
 /*================ Header Style  ==============*/
 
 header {
-  position: absolute;
+  /* position: absolute; */
   /* display: flex;
   align-items: center;
   padding: 100px; */
@@ -71,6 +75,8 @@ header {
   width: 400px;
   top: 100px;
   left: 50%;
+  z-index: 1000;
+  position: relative;
 }
 
 header > img {
